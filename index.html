@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXURY SPICES | Reserve Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-pepper-hot"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">LUXURY</span>
+                    <span class="logo-sub">SPICES</span>
+                </div>
+            </div>
+            
+            <nav class="header-nav">
+                <a href="#" class="nav-link active">Collection</a>
+                <a href="#" class="nav-link">Origins</a>
+                <a href="#" class="nav-link">Artisans</a>
+                <a href="#" class="nav-link">Library</a>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                    <div class="cart-glow"></div>
+                </button>
+            </div>
+        </div>
+        <div class="header-divider"></div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <div class="hero-badge-glow"></div>
+                <i class="fas fa-seedling"></i>
+                <span>BIODYNAMIC RESERVE</span>
+            </div>
+            
+            <h1 class="hero-title">Reserve Collection</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-description">
+                Curated selection of the world's most exceptional spices, harvested at their peak and preserved using 
+                traditional methods. Each batch is numbered, traced, and certified for purity and potency.
+            </p>
+        </div>
+        <div class="hero-gradient"></div>
+    </section>
+    
+    <!-- Filter Bar -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <div class="filter-header">
+                <h2 class="filter-title">Curate Your Selection</h2>
+                <p class="filter-subtitle">Filter by category or explore the complete collection</p>
+            </div>
+            
+            <div class="filter-options">
+                <button class="filter-option active" data-filter="all">
+                    <span>All Spices</span>
+                    <div class="filter-glow"></div>
+                </button>
+                <button class="filter-option" data-filter="rare">
+                    <span>Rare Finds</span>
+                    <div class="filter-glow"></div>
+                </button>
+                <button class="filter-option" data-filter="awarded">
+                    <span>Awarded</span>
+                    <div class="filter-glow"></div>
+                </button>
+                <button class="filter-option" data-filter="organic">
+                    <span>100% Organic</span>
+                    <div class="filter-glow"></div>
+                </button>
+                <button class="filter-option" data-filter="new">
+                    <span>New Arrivals</span>
+                    <div class="filter-glow"></div>
+                </button>
+            </div>
+            
+            <div class="collection-count">
+                <span class="count-number">8</span>
+                <span class="count-label">Exceptional Varieties</span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products Grid -->
+    <main class="products-grid" id="productsGrid">
+        <!-- Products will be dynamically generated here -->
+    </main>
+    
+    <!-- Background -->
+    <div class="background">
+        <div class="bg-noise"></div>
+        <div class="bg-gradient"></div>
+        <div class="bg-texture"></div>
+    </div>
+
+    <style>
+        :root {
+            /* Refined color palette - High-End Organic Luxury */
+            --color-bg: #12100E;
+            --color-bg-light: #1A1816;
+            --color-card-bg: rgba(26, 24, 22, 0.68);
+            --color-primary: #C4A86F;
+            --color-primary-light: #D4B989;
+            --color-primary-dark: #B39860;
+            --color-accent: #8C7853;
+            --color-text: #EDE8E0;
+            --color-text-light: #C9C2B8;
+            --color-text-lighter: #A0988C;
+            --color-border: rgba(196, 168, 111, 0.12);
+            --color-glow: rgba(196, 168, 111, 0.2);
+            
+            /* Premium typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Mulish', sans-serif;
+            
+            /* Enhanced spacing system */
+            --space-xxs: 0.25rem;
+            --space-xs: 0.5rem;
+            --space-sm: 0.75rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            --space-4xl: 6rem;
+            
+            /* Organic border radius */
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --radius-2xl: 48px;
+            --radius-full: 9999px;
+            --radius-pill: 100px;
+            
+            /* Luxury transitions */
+            --transition-slow: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-medium: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --transition-fast: all 0.2s ease;
+            
+            /* Premium shadows */
+            --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.12);
+            --shadow-medium: 0 8px 40px rgba(0, 0, 0, 0.2);
+            --shadow-luxury: 0 20px 80px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 40px var(--color-glow);
+            --shadow-inner: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+            
+            /* Header */
+            --header-height: 90px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            min-height: 100vh;
+            padding-top: var(--header-height);
+            position: relative;
+            overflow-x: hidden;
+            font-weight: 300;
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+        }
+        
+        /* Premium background */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(135deg, #0F0D0B 0%, #1C1916 100%);
+            overflow: hidden;
+        }
+        
+        .bg-noise {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+            opacity: 0.4;
+        }
+        
+        .bg-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 20%, rgba(196, 168, 111, 0.08) 0%, transparent 60%),
+                       radial-gradient(circle at 70% 80%, rgba(140, 120, 83, 0.05) 0%, transparent 60%);
+        }
+        
+        .bg-texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 40 Q 100 20, 180 40 L 160 180 Q 100 190, 40 180 Z' fill='none' stroke='%23C4A86F' stroke-width='0.2' stroke-opacity='0.03'/%3E%3Cpath d='M40 60 Q 100 40, 160 60 L 140 160 Q 100 170, 60 160 Z' fill='none' stroke='%23C4A86F' stroke-width='0.2' stroke-opacity='0.03'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        /* Sticky Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            z-index: 1000;
+            background: rgba(26, 24, 22, 0.85);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            border-bottom: 1px solid rgba(196, 168, 111, 0.1);
+            padding: 0 var(--space-2xl);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: var(--transition-medium);
+        }
+        
+        .site-header.scrolled {
+            background: rgba(18, 16, 14, 0.95);
+            box-shadow: 0 10px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            transition: var(--transition-medium);
+        }
+        
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+        
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-bg);
+            font-size: 1.4rem;
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        
+        .logo-main {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--color-text);
+            letter-spacing: 0.15em;
+        }
+        
+        .logo-sub {
+            font-size: 0.7rem;
+            color: var(--color-text-lighter);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        
+        .header-nav {
+            display: flex;
+            gap: var(--space-2xl);
+        }
+        
+        .nav-link {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            text-decoration: none;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            position: relative;
+            padding: var(--space-xs) 0;
+            transition: var(--transition-medium);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--color-primary), transparent);
+            transition: var(--transition-medium);
+        }
+        
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: var(--color-primary);
+        }
+        
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cart-btn {
+            position: relative;
+            background: rgba(40, 36, 32, 0.8);
+            border: 1px solid rgba(196, 168, 111, 0.2);
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition-medium);
+        }
+        
+        .cart-btn:hover {
+            border-color: rgba(196, 168, 111, 0.4);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: var(--color-primary);
+            color: var(--color-bg);
+            font-size: 0.7rem;
+            font-weight: 600;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cart-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(196, 168, 111, 0.1) 0%, transparent 70%);
+            border-radius: inherit;
+            opacity: 0;
+            transition: var(--transition-medium);
+        }
+        
+        .cart-btn:hover .cart-glow {
+            opacity: 1;
+        }
+        
+        .header-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(196, 168, 111, 0.1), transparent);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            padding: var(--space-4xl) var(--space-2xl) var(--space-3xl);
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            background: rgba(26, 24, 22, 0.8);
+            color: var(--color-primary);
+            font-weight: 500;
+            font-size: 0.7rem;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-pill);
+            margin-bottom: var(--space-xl);
+            border: 1px solid rgba(196, 168, 111, 0.2);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-badge-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(196, 168, 111, 0.1), transparent);
+            opacity: 0.5;
+        }
+        
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(--color-text);
+            letter-spacing: 0.08em;
+            line-height: 1.1;
+            margin-bottom: var(--space-lg);
+            font-style: italic;
+        }
+        
+        .hero-divider {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+            margin: var(--space-xl) auto;
+            opacity: 0.4;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-gradient {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(196, 168, 111, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        /* Filter Section */
+        .filter-section {
+            padding: 0 var(--space-2xl) var(--space-3xl);
+            max-width: 1600px;
+            margin: 0 auto;
+            z-index: 10;
+            position: relative;
+        }
+        
+        .filter-container {
+            background: rgba(26, 24, 22, 0.4);
+            backdrop-filter: blur(20px);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .filter-header {
+            margin-bottom: var(--space-xl);
+            text-align: center;
+        }
+        
+        .filter-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--color-text);
+            letter-spacing: 0.08em;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .filter-subtitle {
+            font-size: 0.9rem;
+            color: var(--color-text-lighter);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .filter-option {
+            background: rgba(40, 36, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--color-text-light);
+            padding: var(--space-sm) var(--space-xl);
+            border-radius: var(--radius-pill);
+            font-size: 0.85rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        .filter-option:hover {
+            border-color: rgba(196, 168, 111, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .filter-option.active {
+            background: rgba(40, 36, 32, 0.9);
+            border-color: var(--color-primary);
+            color: var(--color-primary-light);
+            box-shadow: 0 0 0 1px var(--color-primary),
+                        var(--shadow-glow);
+        }
+        
+        .filter-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(196, 168, 111, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transition-medium);
+        }
+        
+        .filter-option.active .filter-glow {
+            opacity: 1;
+        }
+        
+        .collection-count {
+            text-align: center;
+            padding-top: var(--space-xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .count-number {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: var(--color-primary);
+            display: block;
+            line-height: 1;
+            margin-bottom: var(--space-xs);
+            font-style: italic;
+        }
+        
+        .count-label {
+            font-size: 0.9rem;
+            color: var(--color-text-lighter);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-2xl);
+            padding: 0 var(--space-2xl) var(--space-4xl);
+            max-width: 1600px;
+            margin: 0 auto;
+            z-index: 10;
+            position: relative;
+        }
+        
+        /* Product card - Reused from original with class refactoring */
+        .product-card {
+            background: var(--color-card-bg);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-luxury), var(--shadow-inner);
+            transition: var(--transition-slow);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        @keyframes cardAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+            opacity: 0.3;
+            z-index: 2;
+        }
+        
+        .product-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(196, 168, 111, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5), 
+                        var(--shadow-glow),
+                        inset 0 0 0 1px rgba(196, 168, 111, 0.15);
+        }
+        
+        /* Premium badge */
+        .premium-badge {
+            position: absolute;
+            top: var(--space-xl);
+            right: var(--space-xl);
+            background: rgba(26, 24, 22, 0.8);
+            color: var(--color-primary);
+            font-weight: 500;
+            font-size: 0.7rem;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-pill);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            z-index: 20;
+            border: 1px solid rgba(196, 168, 111, 0.2);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+            transition: var(--transition-medium);
+            overflow: hidden;
+        }
+        
+        .premium-badge:hover {
+            border-color: rgba(196, 168, 111, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .badge-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(196, 168, 111, 0.1), transparent);
+            opacity: 0;
+            transition: var(--transition-medium);
+        }
+        
+        .premium-badge:hover .badge-glow {
+            opacity: 1;
+        }
+        
+        .premium-badge i {
+            font-size: 0.8rem;
+        }
+        
+        /* Image container */
+        .product-image-container {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            background: linear-gradient(to bottom, rgba(18, 16, 14, 0.2), rgba(18, 16, 14, 0.8));
+        }
+        
+        .image-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 30%, rgba(196, 168, 111, 0.1) 0%, transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 2;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.08);
+        }
+        
+        .image-placeholder {
+            width: 140px;
+            height: 140px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .spice-icon {
+            font-size: 4rem;
+            color: var(--color-primary);
+            filter: drop-shadow(0 0 20px rgba(196, 168, 111, 0.3));
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .product-card:hover .spice-icon {
+            transform: scale(1.1) rotate(10deg);
+            filter: drop-shadow(0 0 30px rgba(196, 168, 111, 0.5));
+        }
+        
+        .spice-glow {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle, rgba(196, 168, 111, 0.2) 0%, transparent 70%);
+            filter: blur(20px);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        .product-card:hover .spice-glow {
+            opacity: 0.6;
+        }
+        
+        .image-reflections {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .reflection {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        
+        .product-card:hover .reflection {
+            opacity: 1;
+        }
+        
+        .reflection-1 {
+            top: 20%;
+            left: -100%;
+            width: 100%;
+            height: 1px;
+            animation: reflectionMove 3s ease-in-out infinite;
+        }
+        
+        .reflection-2 {
+            top: 40%;
+            left: -100%;
+            width: 80%;
+            height: 1px;
+            animation: reflectionMove 4s ease-in-out infinite 0.5s;
+        }
+        
+        @keyframes reflectionMove {
+            0% { left: -100%; }
+            100% { left: 200%; }
+        }
+        
+        /* Card content */
+        .product-content {
+            padding: var(--space-2xl);
+        }
+        
+        /* Header and description */
+        .product-header {
+            margin-bottom: var(--space-xl);
+        }
+        
+        .title-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .product-number {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            color: var(--color-text-lighter);
+            font-weight: 400;
+            letter-spacing: 0.2em;
+        }
+        
+        .product-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: var(--color-text);
+            letter-spacing: 0.08em;
+            line-height: 1.1;
+            font-style: italic;
+            margin: 0;
+        }
+        
+        .product-subtitle {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            margin-bottom: var(--space-lg);
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--color-primary), transparent);
+            margin: var(--space-md) 0;
+            opacity: 0.4;
+        }
+        
+        .product-description {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--color-text-light);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+        
+        /* Rating */
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-xl);
+            gap: var(--space-md);
+            padding: var(--space-md) 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .stars {
+            display: flex;
+            gap: 2px;
+            color: var(--color-primary);
+            filter: drop-shadow(0 0 6px rgba(196, 168, 111, 0.3));
+            font-size: 0.9rem;
+        }
+        
+        .rating-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        .rating-value {
+            font-weight: 500;
+            color: var(--color-text);
+            font-size: 0.9rem;
+            font-family: var(--font-heading);
+        }
+        
+        .reviews {
+            font-size: 0.7rem;
+            color: var(--color-text-lighter);
+            font-weight: 300;
+        }
+        
+        /* Weight selector */
+        .weight-selector {
+            margin-bottom: var(--space-xl);
+        }
+        
+        .selector-label {
+            font-size: 0.7rem;
+            color: var(--color-text-lighter);
+            margin-bottom: var(--space-md);
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        
+        .weight-options {
+            display: flex;
+            gap: var(--space-sm);
+        }
+        
+        .weight-option {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-md) var(--space-xs);
+            background: rgba(40, 36, 32, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            color: var(--color-text-light);
+            font-weight: 400;
+            cursor: pointer;
+            transition: var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+            min-height: 80px;
+        }
+        
+        .weight-option:hover {
+            transform: translateY(-4px);
+            border-color: rgba(196, 168, 111, 0.2);
+            box-shadow: var(--shadow-subtle);
+        }
+        
+        .weight-option.active {
+            background: rgba(40, 36, 32, 0.9);
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 1px var(--color-primary),
+                        var(--shadow-glow);
+            color: var(--color-primary-light);
+        }
+        
+        .weight-option.active .weight-value {
+            color: var(--color-primary-light);
+            font-weight: 500;
+        }
+        
+        .option-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(196, 168, 111, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transition-medium);
+        }
+        
+        .weight-option.active .option-glow {
+            opacity: 1;
+        }
+        
+        .weight-value {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-bottom: 2px;
+            transition: var(--transition-medium);
+        }
+        
+        .weight-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-text-lighter);
+        }
+        
+        /* Price and CTA */
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: var(--space-xl);
+            gap: var(--space-lg);
+        }
+        
+        .price-container {
+            display: flex;
+            flex-direction: column;
+            min-width: 100px;
+        }
+        
+        .price-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-xs);
+        }
+        
+        .current-price {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: var(--color-primary);
+            line-height: 1;
+            letter-spacing: 0.02em;
+            font-style: italic;
+        }
+        
+        .currency-symbol {
+            position: relative;
+            font-size: 1.2rem;
+            color: var(--color-primary-light);
+            font-weight: 300;
+        }
+        
+        .currency-line {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, var(--color-primary), transparent);
+        }
+        
+        .price-unit {
+            font-size: 0.75rem;
+            color: var(--color-text-lighter);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Add to cart button - Premium CTA */
+        .add-to-cart-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            background: linear-gradient(135deg, 
+                rgba(196, 168, 111, 0.9), 
+                rgba(180, 152, 95, 0.8));
+            border: none;
+            color: #12100E;
+            padding: var(--space-lg) var(--space-xl);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+            font-family: var(--font-body);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            min-height: 54px;
+            min-width: 160px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .add-to-cart-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4),
+                        0 0 40px rgba(196, 168, 111, 0.4);
+            background: linear-gradient(135deg, 
+                rgba(212, 185, 137, 0.95), 
+                rgba(196, 168, 111, 0.9));
+        }
+        
+        .add-to-cart-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .btn-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transition-medium);
+        }
+        
+        .add-to-cart-btn:hover .btn-glow {
+            opacity: 0.6;
+        }
+        
+        .add-to-cart-btn.added {
+            background: linear-gradient(135deg, #2A5934, #3A6B44);
+            color: #EDE8E0;
+        }
+        
+        .btn-icon {
+            font-size: 0.9rem;
+            transition: transform 0.4s ease;
+        }
+        
+        .add-to-cart-btn:hover .btn-icon {
+            transform: translateX(4px);
+        }
+        
+        .added-confirmation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--space-xs);
+            background: linear-gradient(135deg, #2A5934, #3A6B44);
+            opacity: 0;
+            transform: translateY(100%);
+            transition: var(--transition-medium);
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            font-size: 0.8rem;
+        }
+        
+        .add-to-cart-btn.added .added-confirmation {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .add-to-cart-btn.added .btn-text,
+        .add-to-cart-btn.added .btn-icon {
+            opacity: 0;
+        }
+        
+        /* Additional info */
+        .product-meta {
+            padding-top: var(--space-lg);
+        }
+        
+        .meta-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .meta-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .meta-icon {
+            width: 28px;
+            height: 28px;
+            background: rgba(40, 36, 32, 0.8);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-primary);
+            font-size: 0.8rem;
+            border: 1px solid rgba(196, 168, 111, 0.1);
+        }
+        
+        .meta-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        .meta-title {
+            font-size: 0.7rem;
+            color: var(--color-text-light);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        .meta-subtitle {
+            font-size: 0.65rem;
+            color: var(--color-text-lighter);
+            font-weight: 300;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 1400px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-xl);
+            }
+            
+            .product-card {
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .site-header {
+                padding: 0 var(--space-xl);
+            }
+            
+            .header-nav {
+                gap: var(--space-xl);
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .products-grid,
+            .filter-section,
+            .hero-section {
+                padding-left: var(--space-xl);
+                padding-right: var(--space-xl);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 0 var(--space-lg);
+                height: 80px;
+            }
+            
+            .header-nav {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .filter-options {
+                gap: var(--space-sm);
+            }
+            
+            .filter-option {
+                padding: var(--space-xs) var(--space-lg);
+                font-size: 0.8rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .product-card {
+                max-width: 100%;
+            }
+            
+            .product-footer {
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--space-lg);
+            }
+            
+            .add-to-cart-btn {
+                width: 100%;
+            }
+            
+            .price-container {
+                align-items: center;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .site-header {
+                padding: 0 var(--space-md);
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-section {
+                padding: var(--space-3xl) var(--space-md) var(--space-2xl);
+            }
+            
+            .filter-section {
+                padding: 0 var(--space-md) var(--space-2xl);
+            }
+            
+            .products-grid {
+                padding: 0 var(--space-md) var(--space-3xl);
+            }
+            
+            .product-content {
+                padding: var(--space-xl);
+            }
+            
+            .product-title {
+                font-size: 1.6rem;
+            }
+            
+            .meta-items {
+                grid-template-columns: 1fr;
+                gap: var(--space-sm);
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mock data for luxury spices
+            const spices = [
+                {
+                    id: 1,
+                    number: '001',
+                    title: 'Royal Saffron',
+                    subtitle: 'Spanish Coupe Grade Reserve',
+                    description: 'The world\'s most precious spice, hand-harvested at dawn in La Mancha. Notes of honey, hay, and earth with a complex floral finish.',
+                    rating: 4.8,
+                    reviews: 127,
+                    weights: [
+                        { value: '10g', label: 'Petite', price: 2490 },
+                        { value: '50g', label: 'Classic', price: 10990 },
+                        { value: '100g', label: 'Reserve', price: 19990 }
+                    ],
+                    icon: 'fas fa-pepper-hot',
+                    categories: ['rare', 'awarded', 'organic'],
+                    meta: [
+                        { icon: 'fas fa-leaf', title: 'Biodynamic', subtitle: '100% organic since 1892' },
+                        { icon: 'fas fa-award', title: 'Awarded', subtitle: 'Golden Saffron 2023' },
+                        { icon: 'fas fa-globe-europe', title: 'Origin', subtitle: 'La Mancha, Spain' }
+                    ]
+                },
+                {
+                    id: 2,
+                    number: '002',
+                    title: 'Black Truffle Salt',
+                    subtitle: 'Italian Alba Reserve',
+                    description: 'Finely ground sea salt infused with rare black winter truffles. Intense umami aroma with earthy, garlicky notes.',
+                    rating: 4.9,
+                    reviews: 89,
+                    weights: [
+                        { value: '50g', label: 'Petite', price: 3490 },
+                        { value: '150g', label: 'Classic', price: 8990 },
+                        { value: '300g', label: 'Reserve', price: 15990 }
+                    ],
+                    icon: 'fas fa-mountain',
+                    categories: ['rare', 'new'],
+                    meta: [
+                        { icon: 'fas fa-tree', title: 'Wild Harvested', subtitle: 'Sustainable foraging' },
+                        { icon: 'fas fa-star', title: 'Limited', subtitle: 'Seasonal availability' },
+                        { icon: 'fas fa-globe-europe', title: 'Origin', subtitle: 'Alba, Italy' }
+                    ]
+                },
+                {
+                    id: 3,
+                    number: '003',
+                    title: 'Madagascar Vanilla',
+                    subtitle: 'Bourbon Grade A',
+                    description: 'Plump, oily vanilla beans with deep, complex flavor. Rich with notes of caramel, cherry, and tobacco.',
+                    rating: 4.7,
+                    reviews: 203,
+                    weights: [
+                        { value: '2 beans', label: 'Petite', price: 1990 },
+                        { value: '5 beans', label: 'Classic', price: 4490 },
+                        { value: '10 beans', label: 'Reserve', price: 8490 }
+                    ],
+                    icon: 'fas fa-seedling',
+                    categories: ['organic', 'awarded'],
+                    meta: [
+                        { icon: 'fas fa-leaf', title: 'Organic', subtitle: 'Certified biodynamic' },
+                        { icon: 'fas fa-award', title: 'Awarded', subtitle: 'Vanilla Masters 2022' },
+                        { icon: 'fas fa-globe-africa', title: 'Origin', subtitle: 'Madagascar' }
+                    ]
+                },
+                {
+                    id: 4,
+                    number: '004',
+                    title: 'Sumac',
+                    subtitle: 'Middle Eastern Reserve',
+                    description: 'Tangy, citrusy spice made from dried berries. Adds vibrant acidity and deep crimson color to dishes.',
+                    rating: 4.5,
+                    reviews: 67,
+                    weights: [
+                        { value: '30g', label: 'Petite', price: 1290 },
+                        { value: '100g', label: 'Classic', price: 3490 },
+                        { value: '250g', label: 'Reserve', price: 7990 }
+                    ],
+                    icon: 'fas fa-berry',
+                    categories: ['organic'],
+                    meta: [
+                        { icon: 'fas fa-leaf', title: 'Organic', subtitle: 'Wild harvested' },
+                        { icon: 'fas fa-sun', title: 'Sun-dried', subtitle: 'Traditional method' },
+                        { icon: 'fas fa-globe-asia', title: 'Origin', subtitle: 'Lebanon' }
+                    ]
+                },
+                {
+                    id: 5,
+                    number: '005',
+                    title: 'Sichuan Pepper',
+                    subtitle: 'Chinese Red Reserve',
+                    description: 'Not a pepper but a citrus berry. Creates a unique tingling numbness known as "ma la" with citrusy aroma.',
+                    rating: 4.6,
+                    reviews: 92,
+                    weights: [
+                        { value: '20g', label: 'Petite', price: 1490 },
+                        { value: '80g', label: 'Classic', price: 4990 },
+                        { value: '200g', label: 'Reserve', price: 10990 }
+                    ],
+                    icon: 'fas fa-fire',
+                    categories: ['rare', 'new'],
+                    meta: [
+                        { icon: 'fas fa-mountain', title: 'Wild', subtitle: 'Mountain harvested' },
+                        { icon: 'fas fa-star', title: 'Rare', subtitle: 'Limited harvest' },
+                        { icon: 'fas fa-globe-asia', title: 'Origin', subtitle: 'Sichuan, China' }
+                    ]
+                },
+                {
+                    id: 6,
+                    number: '006',
+                    title: 'Cardamom Green',
+                    subtitle: 'Guatemalan Supreme',
+                    description: 'The queen of spices with intensely aromatic, sweetly pungent flavor. Eucalyptus and citrus notes.',
+                    rating: 4.7,
+                    reviews: 118,
+                    weights: [
+                        { value: '15g', label: 'Petite', price: 1790 },
+                        { value: '60g', label: 'Classic', price: 5990 },
+                        { value: '150g', label: 'Reserve', price: 13990 }
+                    ],
+                    icon: 'fas fa-spa',
+                    categories: ['organic', 'awarded'],
+                    meta: [
+                        { icon: 'fas fa-leaf', title: 'Organic', subtitle: 'Shade grown' },
+                        { icon: 'fas fa-award', title: 'Awarded', subtitle: 'Spice Excellence 2023' },
+                        { icon: 'fas fa-globe-americas', title: 'Origin', subtitle: 'Guatemala' }
+                    ]
+                },
+                {
+                    id: 7,
+                    number: '007',
+                    title: 'Smoked Paprika',
+                    subtitle: 'Spanish Pimentón de la Vera',
+                    description: 'Sweet peppers smoked over oak for weeks, then stone-ground. Deep smoky flavor with sweet undertones.',
+                    rating: 4.8,
+                    reviews: 156,
+                    weights: [
+                        { value: '40g', label: 'Petite', price: 1590 },
+                        { value: '150g', label: 'Classic', price: 4990 },
+                        { value: '400g', label: 'Reserve', price: 11990 }
+                    ],
+                    icon: 'fas fa-smoke',
+                    categories: ['awarded'],
+                    meta: [
+                        { icon: 'fas fa-fire', title: 'Oak Smoked', subtitle: 'Traditional smoking' },
+                        { icon: 'fas fa-award', title: 'Awarded', subtitle: 'DO Certified' },
+                        { icon: 'fas fa-globe-europe', title: 'Origin', subtitle: 'La Vera, Spain' }
+                    ]
+                },
+                {
+                    id: 8,
+                    number: '008',
+                    title: 'Tellicherry Pepper',
+                    subtitle: 'Indian Black Reserve',
+                    description: 'Large, bold peppercorns left to ripen longer on the vine. Complex flavor with citrus and pine notes.',
+                    rating: 4.9,
+                    reviews: 211,
+                    weights: [
+                        { value: '30g', label: 'Petite', price: 990 },
+                        { value: '120g', label: 'Classic', price: 3290 },
+                        { value: '300g', label: 'Reserve', price: 7490 }
+                    ],
+                    icon: 'fas fa-pepper-hot',
+                    categories: ['organic', 'awarded'],
+                    meta: [
+                        { icon: 'fas fa-leaf', title: 'Organic', subtitle: 'Chemical free' },
+                        { icon: 'fas fa-award', title: 'Awarded', subtitle: 'Pepper Gold 2023' },
+                        { icon: 'fas fa-globe-asia', title: 'Origin', subtitle: 'Kerala, India' }
+                    ]
+                }
+            ];
+            
+            // DOM elements
+            const productsGrid = document.getElementById('productsGrid');
+            const cartCount = document.querySelector('.cart-count');
+            const filterOptions = document.querySelectorAll('.filter-option');
+            const collectionCount = document.querySelector('.count-number');
+            const header = document.querySelector('.site-header');
+            
+            // Cart state
+            let cart = [];
+            
+            // Initialize the page
+            function init() {
+                renderProducts(spices);
+                setupEventListeners();
+                setupHeaderScroll();
+                updateCollectionCount();
+                
+                // Stagger animation for product cards
+                const cards = document.querySelectorAll('.product-card');
+                cards.forEach((card, index) => {
+                    card.style.animationDelay = `${index * 0.1}s`;
+                });
+            }
+            
+            // Render products to the grid
+            function renderProducts(products) {
+                productsGrid.innerHTML = '';
+                
+                products.forEach(spice => {
+                    const card = createProductCard(spice);
+                    productsGrid.appendChild(card);
+                });
+                
+                // Reinitialize event listeners for new cards
+                setTimeout(() => {
+                    setupProductCardInteractions();
+                }, 100);
+            }
+            
+            // Create a product card HTML element
+            function createProductCard(spice) {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.dataset.id = spice.id;
+                card.dataset.categories = spice.categories.join(' ');
+                
+                // Generate stars HTML
+                const starsHTML = generateStarsHTML(spice.rating);
+                
+                // Generate weight options HTML
+                const weightOptionsHTML = spice.weights.map((weight, index) => `
+                    <button class="weight-option ${index === 0 ? 'active' : ''}" 
+                            data-weight="${weight.value}" 
+                            data-price="${weight.price}">
+                        <span class="weight-value">${weight.value}</span>
+                        <span class="weight-label">${weight.label}</span>
+                        <div class="option-glow"></div>
+                    </button>
+                `).join('');
+                
+                // Generate meta items HTML
+                const metaItemsHTML = spice.meta.map(meta => `
+                    <div class="meta-item">
+                        <div class="meta-icon">
+                            <i class="${meta.icon}"></i>
+                        </div>
+                        <div class="meta-text">
+                            <span class="meta-title">${meta.title}</span>
+                            <span class="meta-subtitle">${meta.subtitle}</span>
+                        </div>
+                    </div>
+                `).join('');
+                
+                card.innerHTML = `
+                    <!-- Premium badge -->
+                    <div class="premium-badge">
+                        <div class="badge-glow"></div>
+                        <i class="fas fa-crown"></i>
+                        <span>PREMIUM RESERVE</span>
+                    </div>
+                    
+                    <!-- Product image -->
+                    <div class="product-image-container">
+                        <div class="image-gradient"></div>
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <div class="spice-icon">
+                                    <i class="${spice.icon}"></i>
+                                </div>
+                                <div class="spice-glow"></div>
+                            </div>
+                            <div class="image-reflections">
+                                <div class="reflection reflection-1"></div>
+                                <div class="reflection reflection-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card content -->
+                    <div class="product-content">
+                        <!-- Header and description -->
+                        <div class="product-header">
+                            <div class="title-wrapper">
+                                <span class="product-number">${spice.number}</span>
+                                <h2 class="product-title">${spice.title}</h2>
+                            </div>
+                            <p class="product-subtitle">${spice.subtitle}</p>
+                            <div class="divider"></div>
+                            <p class="product-description">${spice.description}</p>
+                        </div>
+                        
+                        <!-- Rating -->
+                        <div class="product-rating">
+                            <div class="stars">
+                                ${starsHTML}
+                            </div>
+                            <div class="rating-info">
+                                <span class="rating-value">${spice.rating}</span>
+                                <span class="reviews">(${spice.reviews} artisan reviews)</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Weight selector -->
+                        <div class="weight-selector">
+                            <p class="selector-label">SELECT WEIGHT</p>
+                            <div class="weight-options">
+                                ${weightOptionsHTML}
+                            </div>
+                        </div>
+                        
+                        <!-- Price and CTA -->
+                        <div class="product-footer">
+                            <div class="price-container">
+                                <div class="price-wrapper">
+                                    <p class="current-price">${spice.weights[0].price.toLocaleString()}</p>
+                                    <div class="currency-symbol">
+                                        <span>₽</span>
+                                        <div class="currency-line"></div>
+                                    </div>
+                                </div>
+                                <p class="price-unit">per ${spice.weights[0].value} • hand-selected</p>
+                            </div>
+                            
+                            <button class="add-to-cart-btn">
+                                <div class="btn-glow"></div>
+                                <span class="btn-text">ADD TO COLLECTION</span>
+                                <span class="btn-icon">
+                                    <i class="fas fa-arrow-right"></i>
+                                </span>
+                                <span class="added-confirmation">
+                                    <i class="fas fa-check"></i> RESERVED
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <!-- Additional info -->
+                        <div class="product-meta">
+                            <div class="meta-divider"></div>
+                            <div class="meta-items">
+                                ${metaItemsHTML}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                return card;
+            }
+            
+            // Generate stars HTML based on rating
+            function generateStarsHTML(rating) {
+                let starsHTML = '';
+                const fullStars = Math.floor(rating);
+                const hasHalfStar = rating % 1 >= 0.5;
+                
+                for (let i = 0; i < fullStars; i++) {
+                    starsHTML += '<i class="fas fa-star"></i>';
+                }
+                
+                if (hasHalfStar) {
+                    starsHTML += '<i class="fas fa-star-half-alt"></i>';
+                }
+                
+                const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+                for (let i = 0; i < emptyStars; i++) {
+                    starsHTML += '<i class="far fa-star"></i>';
+                }
+                
+                return starsHTML;
+            }
+            
+            // Setup event listeners for product card interactions
+            function setupProductCardInteractions() {
+                const productCards = document.querySelectorAll('.product-card');
+                
+                productCards.forEach(card => {
+                    // Parallax effect for each card
+                    let mouseX = 0;
+                    let mouseY = 0;
+                    let cardX = 0;
+                    let cardY = 0;
+                    
+                    const lerp = (start, end, amt) => start * (1 - amt) + end * amt;
+                    const image = card.querySelector('.product-image');
+                    
+                    card.addEventListener('mousemove', (e) => {
+                        const { left, top, width, height } = card.getBoundingClientRect();
+                        mouseX = (e.clientX - left) / width - 0.5;
+                        mouseY = (e.clientY - top) / height - 0.5;
+                    });
+                    
+                    function animateParallax() {
+                        cardX = lerp(cardX, mouseX * 10, 0.1);
+                        cardY = lerp(cardY, mouseY * 10, 0.1);
+                        
+                        if (image) {
+                            image.style.transform = `scale(1.08) translate(${cardX}px, ${cardY}px)`;
+                        }
+                        
+                        requestAnimationFrame(animateParallax);
+                    }
+                    
+                    animateParallax();
+                    
+                    card.addEventListener('mouseleave', () => {
+                        mouseX = 0;
+                        mouseY = 0;
+                    });
+                    
+                    // Weight selection for each card
+                    const weightOptions = card.querySelectorAll('.weight-option');
+                    const currentPrice = card.querySelector('.current-price');
+                    const priceUnit = card.querySelector('.price-unit');
+                    
+                    weightOptions.forEach(option => {
+                        option.addEventListener('click', function() {
+                            // Animate out current active
+                            const currentActive = card.querySelector('.weight-option.active');
+                            if (currentActive && currentActive !== this) {
+                                currentActive.style.transform = 'scale(0.95)';
+                                setTimeout(() => {
+                                    currentActive.classList.remove('active');
+                                    currentActive.style.transform = '';
+                                }, 200);
+                            }
+                            
+                            // Animate in new active
+                            this.style.transform = 'scale(0.95)';
+                            setTimeout(() => {
+                                this.classList.add('active');
+                                this.style.transform = 'scale(1)';
+                                
+                                // Update price
+                                const price = this.getAttribute('data-price');
+                                const weight = this.getAttribute('data-weight');
+                                
+                                // Format with luxury comma
+                                const formattedPrice = parseInt(price).toLocaleString();
+                                currentPrice.textContent = formattedPrice;
+                                
+                                // Update unit text
+                                priceUnit.textContent = `per ${weight} • hand-selected`;
+                                
+                                // Price animation
+                                currentPrice.style.transform = 'scale(1.1)';
+                                currentPrice.style.color = 'var(--color-primary-light)';
+                                setTimeout(() => {
+                                    currentPrice.style.transform = 'scale(1)';
+                                }, 300);
+                                
+                                setTimeout(() => {
+                                    currentPrice.style.color = '';
+                                }, 1000);
+                                
+                            }, 200);
+                        });
+                    });
+                    
+                    // Add to cart button for each card
+                    const addToCartBtn = card.querySelector('.add-to-cart-btn');
+                    
+                    addToCartBtn.addEventListener('click', function() {
+                        // Get product data
+                        const productId = parseInt(card.dataset.id);
+                        const productTitle = card.querySelector('.product-title').textContent;
+                        const weightOption = card.querySelector('.weight-option.active');
+                        const weight = weightOption.getAttribute('data-weight');
+                        const price = parseInt(weightOption.getAttribute('data-price'));
+                        
+                        // Add to cart
+                        addToCart(productId, productTitle, weight, price);
+                        
+                        // Add luxury confirmation state
+                        this.classList.add('added');
+                        
+                        // Ripple effect
+                        const ripple = document.createElement('div');
+                        ripple.style.cssText = `
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 0;
+                            height: 0;
+                            background: rgba(255, 255, 255, 0.3);
+                            border-radius: 50%;
+                            transform: translate(-50%, -50%);
+                            pointer-events: none;
+                            z-index: 1;
+                        `;
+                        this.appendChild(ripple);
+                        
+                        // Animate ripple
+                        setTimeout(() => {
+                            ripple.style.width = '300px';
+                            ripple.style.height = '300px';
+                            ripple.style.opacity = '0';
+                            ripple.style.transition = 'all 0.8s ease';
+                        }, 10);
+                        
+                        // Button press animation
+                        this.style.transform = 'scale(0.96)';
+                        setTimeout(() => {
+                            this.style.transform = '';
+                        }, 200);
+                        
+                        // Remove ripple after animation
+                        setTimeout(() => {
+                            ripple.remove();
+                        }, 1000);
+                        
+                        // Show luxury notification
+                        showLuxuryNotification(`${productTitle} added to your Collection`);
+                        
+                        // Return to original state
+                        setTimeout(() => {
+                            this.classList.remove('added');
+                        }, 3000);
+                    });
+                });
+            }
+            
+            // Setup event listeners for filters and other UI
+            function setupEventListeners() {
+                // Filter options
+                filterOptions.forEach(option => {
+                    option.addEventListener('click', function() {
+                        // Update active state
+                        filterOptions.forEach(opt => opt.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Filter products
+                        const filter = this.dataset.filter;
+                        if (filter === 'all') {
+                            renderProducts(spices);
+                        } else {
+                            const filteredSpices = spices.filter(spice => 
+                                spice.categories.includes(filter)
+                            );
+                            renderProducts(filteredSpices);
+                        }
+                        
+                        // Update collection count
+                        setTimeout(() => {
+                            updateCollectionCount();
+                        }, 100);
+                    });
+                });
+                
+                // Cart button
+                const cartBtn = document.querySelector('.cart-btn');
+                cartBtn.addEventListener('click', () => {
+                    showLuxuryNotification('Your collection is empty. Add some luxury spices.');
+                });
+            }
+            
+            // Update collection count based on visible products
+            function updateCollectionCount() {
+                const visibleCards = document.querySelectorAll('.product-card:not([style*="display: none"])');
+                collectionCount.textContent = visibleCards.length;
+            }
+            
+            // Add item to cart
+            function addToCart(id, title, weight, price) {
+                cart.push({ id, title, weight, price });
+                cartCount.textContent = cart.length;
+                
+                // Update cart button animation
+                const cartBtn = document.querySelector('.cart-btn');
+                cartBtn.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    cartBtn.style.transform = '';
+                }, 300);
+            }
+            
+            // Luxury notification system
+            function showLuxuryNotification(message) {
+                const notification = document.createElement('div');
+                notification.className = 'luxury-notification';
+                notification.innerHTML = `
+                    <div class="notification-glow"></div>
+                    <div class="notification-content">
+                        <i class="fas fa-check-circle"></i>
+                        <span>${message}</span>
+                    </div>
+                `;
+                
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 120px;
+                    right: 40px;
+                    background: rgba(26, 24, 22, 0.9);
+                    color: var(--color-primary-light);
+                    padding: 0;
+                    border-radius: var(--radius-lg);
+                    z-index: 10000;
+                    transform: translateX(150%) translateY(-20px);
+                    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+                    font-family: var(--font-body);
+                    border: 1px solid var(--color-border);
+                    backdrop-filter: blur(20px);
+                    overflow: hidden;
+                    box-shadow: var(--shadow-luxury);
+                    opacity: 0;
+                `;
+                
+                document.body.appendChild(notification);
+                
+                // Show with delay
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(0) translateY(0)';
+                    notification.style.opacity = '1';
+                }, 50);
+                
+                // Hide after delay
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(150%) translateY(-20px)';
+                    notification.style.opacity = '0';
+                    
+                    // Remove after animation
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            document.body.removeChild(notification);
+                        }
+                    }, 800);
+                }, 4000);
+                
+                // Add notification styles
+                if (!document.querySelector('#notification-styles')) {
+                    const style = document.createElement('style');
+                    style.id = 'notification-styles';
+                    style.textContent = `
+                        .luxury-notification .notification-glow {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: linear-gradient(135deg, rgba(196, 168, 111, 0.1), transparent);
+                            z-index: 1;
+                        }
+                        
+                        .luxury-notification .notification-content {
+                            position: relative;
+                            z-index: 2;
+                            padding: var(--space-lg) var(--space-xl);
+                            display: flex;
+                            align-items: center;
+                            gap: var(--space-md);
+                            font-weight: 500;
+                            letter-spacing: 0.05em;
+                        }
+                        
+                        .luxury-notification i {
+                            font-size: 1.2rem;
+                            color: var(--color-primary);
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+            }
+            
+            // Header scroll effect
+            function setupHeaderScroll() {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+            
+            // Initialize the application
+            init();
+        });
+    </script>
+</body>
+</html>
